@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <settings>
+        <setting name="lazyLoadingEnabled" value="true"/>
+        <!-- <setting name="aggressiveLazyLoading" value="false"/> -->
+    </settings>
+    <typeAliases>
+        <typeAlias alias="role" type="com.xcf.to.Role"/>
+    </typeAliases>
+    <typeHandlers>
+        <typeHandler jdbcType="VARCHAR" javaType="string" handler="com.xcf.typehandler.MyStringHandler"/>
+    </typeHandlers>
+    <!-- 定义数据库的信息，默认使用development数据库构建环境 -->
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC" />
+            <dataSource type="POOLED">
+                <property name="driver" value="org.h2.Driver"/>
+                <property name="url" value="jdbc:h2:mem:testdb;MODE=MYSQL;DB_CLOSE_DELAY=-1"/>
+                <property name="username" value="sa"/>
+                <property name="password" value=""/>
+            </dataSource>
+        </environment>
+    </environments>
+    <!-- 定义映射器 -->
+    <mappers>
+        <mapper resource="mapper/RoleMapper.xml"/>
+    </mappers>
+</configuration>

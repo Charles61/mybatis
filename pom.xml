@@ -135,6 +135,12 @@
 
   <dependencies>
     <dependency>
+      <groupId>com.h2database</groupId>
+      <artifactId>h2</artifactId>
+      <version>1.4.200</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
       <groupId>ognl</groupId>
       <artifactId>ognl</artifactId>
       <version>3.0.8</version>
